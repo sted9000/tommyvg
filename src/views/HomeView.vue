@@ -2,11 +2,11 @@
   <div class="landing-container">
     <h1 class="title">Thomas Van Gorder The Great App!</h1>
     <div class="login-buttons">
-    <button class="google-login-button" @click="handleClick('/home')">
+    <button class="google-login-button" @click="handleClick('/')">
       <img class="google-icon" src="../assets/google-logo.png" alt="Google logo" style="width: 16px; height: 16px;">
       <div class="google-login-text">Login with Google</div>
     </button>
-    <button class="enter-button" @click="handleClick('/home')">Let me in!</button>
+    <button class="enter-button" @click="handleClick('/')">Let me in!</button>
     </div>
     <div class="user-type-buttons">
       <button class="user-button parent-button" @click="handleClick('/parents')" style="padding: 1.5rem 3rem; font-size: 1.2rem;">
