@@ -1,7 +1,24 @@
 <template>
   <div class="landing-container">
-    <h1 class="title">Tommy VG</h1>
-    <button class="enter-button" @click="handleClick">Let me in!</button>
+    <h1 class="title">Thomas Van Gorder The Great App!</h1>
+    <div class="login-buttons">
+    <button class="google-login-button" @click="handleClick('/home')">
+      <img class="google-icon" src="../assets/google-logo.png" alt="Google logo" style="width: 16px; height: 16px;">
+      <div class="google-login-text">Login with Google</div>
+    </button>
+    <button class="enter-button" @click="handleClick('/home')">Let me in!</button>
+    </div>
+    <div class="user-type-buttons">
+      <button class="user-button parent-button" @click="handleClick('/parents')" style="padding: 1.5rem 3rem; font-size: 1.2rem;">
+        👨‍👩‍👧‍👦 Parent
+      </button>
+      <button class="user-button teacher-button" @click="handleClick('/teachers')" style="padding: 1.5rem 3rem; font-size: 1.2rem;">
+        👩‍🏫 Teacher
+      </button>
+      <button class="user-button student-button" @click="handleClick('/students')" style="padding: 1.5rem 3rem; font-size: 1.2rem;">
+        👨‍🎓 Student
+      </button>
+    </div>
     <footer class="footer">
       Made with <span class="heart">❤️</span> by Tommy VG and Friends
     </footer>
@@ -9,8 +26,13 @@
 </template>
 
 <script setup>
-const handleClick = () => {
-  console.log('Button clicked!') // You can add more functionality here
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const handleClick = (route, userCategory) => {
+  console.log(userCategory)
+  router.push(route)
 }
 </script>
 
@@ -81,5 +103,22 @@ const handleClick = () => {
   .footer {
     font-size: 1rem;
   }
+
+}
+.login-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+  }
+.google-login-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+.google-login-text {
+  margin-left: 1rem;
 }
 </style>
